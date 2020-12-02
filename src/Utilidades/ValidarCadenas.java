@@ -29,7 +29,7 @@ public class ValidarCadenas {
             IO_ES.escribirLN(morado + "------------------MENU COMPROBACIÓN DE MATRÍCULAS------------------" + reset);
             IO_ES.escribirLN("1. Comprobar matrícula de un automóvil");
             IO_ES.escribirLN("2. Comprobar matrícula de un ciclomotor");
-            IO_ES.escribirLN("0. Salir");//Solo se debe salir al pulsar 0
+            IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
 
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             if (opciones > -1 && opciones < 3) {

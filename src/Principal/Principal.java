@@ -7,7 +7,6 @@ import ArrysCC.Arrays;
 import ArrysCC.CadenaCaracteres;
 import Utilidades.IO_ES;
 import Utilidades.ValidarCadenas;
-import java.util.Scanner;
 
 /**
  *
@@ -30,7 +29,7 @@ public class Principal {
         boolean correcto = false;
 
         do {
-            IO_ES.escribirLN(morado + "--------------------------------MENU--------------------------------" + reset);
+            IO_ES.escribirLN(morado + "--------------------------------MENU PRINCIPAL--------------------------------" + reset);
             IO_ES.escribirLN("1. Cadena de caracteres");
             IO_ES.escribirLN("2. Validar matrículas");
             IO_ES.escribirLN("3. Arrays");
