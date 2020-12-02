@@ -11,17 +11,17 @@ import java.util.*;
  */
 public class IO_ES {
 
-    public static int leerInteger() {
+    public static int leerInteger(String frase) {
         int numero = 0;
         boolean correcto = false;
         Scanner entrada = new Scanner(System.in);
         do {
             try {
-                System.out.print("Introduce un número entero: ");
+                System.out.print(frase);
                 numero = entrada.nextInt();
                 correcto = true;
             } catch (InputMismatchException e) {
-                System.err.println("Dato entero no válido");
+                System.err.println("Dato no válido");
                 entrada.nextLine();
             }
 
@@ -29,13 +29,13 @@ public class IO_ES {
         return numero;
     }
 
-    public static float leerReal() {
+    public static float leerReal(String frase) {
         float numero = 0;
         boolean correcto = false;
         Scanner entrada = new Scanner(System.in);
         do {
             try {
-                System.out.print("Introduce un número real: ");
+                System.out.print(frase);
                 numero = entrada.nextFloat();
                 correcto = true;
             } catch (InputMismatchException e) {
@@ -47,13 +47,13 @@ public class IO_ES {
         return numero;
     }
 
-    public static long leerIntegerlargo() {
+    public static long leerIntegerlargo(String frase) {
         long numero = 0;
         boolean correcto = false;
         Scanner entrada = new Scanner(System.in);
         do {
             try {
-                System.out.print("Introduce un número entero largo: ");
+                System.out.print(frase);
                 numero = entrada.nextLong();
                 correcto = true;
             } catch (InputMismatchException e) {
@@ -65,13 +65,13 @@ public class IO_ES {
         return numero;
     }
 
-    public static double leerReallargo() {
+    public static double leerReallargo(String frase) {
         double numero = 0;
         boolean correcto = false;
         Scanner entrada = new Scanner(System.in);
         do {
             try {
-                System.out.print("Introduce un real largo: ");
+                System.out.print(frase);
                 numero = entrada.nextDouble();
                 correcto = true;
             } catch (InputMismatchException e) {
