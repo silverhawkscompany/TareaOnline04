@@ -26,7 +26,7 @@ public class Arrays {
         boolean correcto = false;
 
         do {
-            IO_ES.escribirLN(morado + "--------------------------MENU DE ARRAYS---------------------------" + reset);
+            IO_ES.escribirLN(azul + "-------------------------------MENU DE ARRAYS--------------------------------" + azul);
             IO_ES.escribirLN("1. Mostrar un Array de 10 con 10 primeros números pares");
             IO_ES.escribirLN("2. Acierte un número de un Array de 10 con números aleatorios");
             IO_ES.escribirLN("3. Elije el tamaño de un Array aleatorio, para ver la media, el mayor y el menor valor");

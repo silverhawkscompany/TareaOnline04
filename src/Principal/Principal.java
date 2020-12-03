@@ -5,6 +5,7 @@ package Principal;
 
 import ArrysCC.Arrays;
 import ArrysCC.CadenaCaracteres;
+import HundirLaFlota.HundirFlota;
 import Utilidades.IO_ES;
 import Utilidades.ValidarCadenas;
 
@@ -29,7 +30,7 @@ public class Principal {
         boolean correcto = false;
 
         do {
-            IO_ES.escribirLN(morado + "--------------------------------MENU PRINCIPAL--------------------------------" + reset);
+            IO_ES.escribirLN(azul + "--------------------------------MENU PRINCIPAL--------------------------------" + reset);
             IO_ES.escribirLN("1. Cadena de caracteres");
             IO_ES.escribirLN("2. Validar matrículas");
             IO_ES.escribirLN("3. Arrays");
@@ -58,7 +59,7 @@ public class Principal {
                     break;
                 case 4:
                     correcto = false;
-                    //HundirFlota();
+                    HundirFlota.juego();
                     break;
                 case 0:
                     break;

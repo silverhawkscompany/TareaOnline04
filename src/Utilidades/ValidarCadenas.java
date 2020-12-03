@@ -26,7 +26,7 @@ public class ValidarCadenas {
         boolean correcto = false;
 
         do {
-            IO_ES.escribirLN(morado + "------------------MENU COMPROBACIÓN DE MATRÍCULAS------------------" + reset);
+            IO_ES.escribirLN(azul + "-----------------------MENU COMPROBACIÓN DE MATRÍCULAS-----------------------" + reset);
             IO_ES.escribirLN("1. Comprobar matrícula de un automóvil");
             IO_ES.escribirLN("2. Comprobar matrícula de un ciclomotor");
             IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
