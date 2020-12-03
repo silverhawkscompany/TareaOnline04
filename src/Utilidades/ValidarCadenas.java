@@ -9,24 +9,16 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author dgdan
+ * @author Daniel Díaz González
  */
 public class ValidarCadenas {
 
     public static void opcionesMenu() {
-        String rojo = "\033[31m";
-        String verde = "\033[32m";
-        String amarillo = "\033[33m";
-        String azul = "\033[34m";
-        String morado = "\033[35m";
-        String cyan = "\033[36m";
-        String reset = "\u001B[0m";
-
         int opciones;
         boolean correcto = false;
 
         do {
-            IO_ES.escribirLN(azul + "-----------------------MENU COMPROBACIÓN DE MATRÍCULAS-----------------------" + reset);
+            IO_ES.escribirLN(Color.azul() + "-----------------------MENU COMPROBACIÓN DE MATRÍCULAS-----------------------" + Color.reset());
             IO_ES.escribirLN("1. Comprobar matrícula de un automóvil");
             IO_ES.escribirLN("2. Comprobar matrícula de un ciclomotor");
             IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
@@ -35,25 +27,24 @@ public class ValidarCadenas {
             if (opciones > -1 && opciones < 3) {
                 correcto = true;
             } else {
-                IO_ES.escribirLN(rojo + "Escribe una opción posible" + reset);
+                IO_ES.escribirLN(Color.rojo() + "Escribe una opción posible" + Color.reset());
             }
 
             switch (opciones) {
                 case 1:
                     correcto = false;
                     if (comprobarMatriculaAutomovil()) {
-                        IO_ES.escribirLN(verde + "Matrícula correcta" + reset);
+                        IO_ES.escribirLN(Color.verde() + "Matrícula correcta" + Color.reset());
                     } else {
-                        IO_ES.escribirLN(rojo + "La matrícula no es válida" + reset);
+                        IO_ES.escribirLN(Color.rojo() + "La matrícula no es válida" + Color.reset());
                     }
-
                     break;
                 case 2:
                     correcto = false;
                     if (comprobarMatriculaCiclomotor()) {
-                        System.out.println(verde + "Matrícula correcta" + reset);
+                        System.out.println(Color.verde() + "Matrícula correcta" + Color.reset());
                     } else {
-                        System.out.println(rojo + "La matrícula no es válida" + reset);
+                        System.out.println(Color.rojo() + "La matrícula no es válida" + Color.reset());
                     }
                     break;
                 case 0:
@@ -69,16 +60,10 @@ public class ValidarCadenas {
 
         IO_ES.escribir("Escribe la matricula del automóvil: ");
         matricula = entrada.nextLine();
-
+        //Lo que no queremos que incluya va entre parentesis dentro de los corchetes a los que hace referencia
         Pattern p = Pattern.compile("[0-9]{4}[b-zB-Z([^aieou])]{3}");
         Matcher m = p.matcher(matricula);
-
-        /*if (m.matches()) {
-            System.out.println("Matrícula correcta");
-        } else {
-            System.out.println("La matrícula no es correcta");
-        }¡
-        return true;*/
+        //Nos devuleve true o false
         return m.matches();
     }
 
@@ -92,13 +77,7 @@ public class ValidarCadenas {
 
         Pattern p = Pattern.compile("[b-zB-Z([^aieou])]{1}[0-9]{4}[b-zB-Z([^aieou])]{3}");
         Matcher m = p.matcher(matricula);
-
-        /*if (m.matches()) {
-            System.out.println("Matrícula correcta");
-        } else {
-            System.out.println("La matrícula no es correcta");
-        }
-        return true;*/
+        //Nos devuleve true o false
         return m.matches();
     }
 }

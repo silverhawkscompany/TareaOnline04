@@ -7,11 +7,11 @@ import Utilidades.IO_ES;
 
 /**
  *
- * @author dgdan
+ * @author Daniel Díaz González
  */
 public class HundirFlota {
 
-    public static void juego() {
+    public static void opcionesMenu() {
         String[][] tablero = new String[11][11];//Declaracion del array del tablero
 
         //*** Llenar tablero ***//

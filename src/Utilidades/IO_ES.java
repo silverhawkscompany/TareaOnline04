@@ -40,7 +40,8 @@ public class IO_ES {
                 correcto = true;
             } catch (InputMismatchException e) {
                 System.err.println("Dato real no válido");
-                entrada.nextLine();//Con este comando limpiamos el buffer al meter un dato erroneo, sino se produce un bucle infinito
+                //Limpiamos el buffer, al meter un dato erroneo, sino se produce un bucle infinito
+                entrada.nextLine();
             }
 
         } while (correcto == false);

@@ -3,6 +3,7 @@
  */
 package ArrysCC;
 
+import Utilidades.Color;
 import Utilidades.IO_ES;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,33 +11,25 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author dgdan
+ * @author Daniel Díaz González
  */
 public class CadenaCaracteres {
 
     public static void opcionesMenu() {
-        String rojo = "\033[31m";
-        String verde = "\033[32m";
-        String amarillo = "\033[33m";
-        String azul = "\033[34m";
-        String morado = "\033[35m";
-        String cyan = "\033[36m";
-        String reset = "\u001B[0m";
-
         int opciones;
         boolean correcto = false;
         String contenido = "";
         String palabra = "$Hyperboss";
+        int contador = 0;
+        //Contenido del texto
         try {
             contenido = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
-            //System.out.println(contenido); // para visualizar el contenido del fichero por pantalla
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-        int contador = 0;
 
         do {
-            IO_ES.escribirLN(azul + "--------------------------MENU CADENA DE CARACTERES--------------------------" + reset);
+            IO_ES.escribirLN(Color.azul() + "--------------------------MENU CADENA DE CARACTERES--------------------------" + Color.reset());
             IO_ES.escribirLN("1. Buscar la palabra '$Hyperboss'");//Indicar cuantas veces aparece en el texto
             IO_ES.escribirLN("2. Sustituir la palabra '$Hyperboss' por 'COÑAZO'");//Además tiene que aparecer en azul
             IO_ES.escribirLN("3. Primera frase en aparecer '$Hyperboss'");
@@ -47,7 +40,7 @@ public class CadenaCaracteres {
             if (opciones > -1 && opciones < 4) {
                 correcto = true;
             } else {
-                IO_ES.escribirLN(rojo + "Escribe una opción posible" + reset);
+                IO_ES.escribirLN(Color.rojo() + "Escribe una opción posible" + Color.reset());
             }
 
             switch (opciones) {
@@ -58,26 +51,27 @@ public class CadenaCaracteres {
                         contenido = contenido.substring(contenido.indexOf(palabra) + palabra.length());
                         contador++;
                     }
-
+                    IO_ES.escribirLN(Color.azul() + "-----------------------------------------------------------------------------" + Color.reset());
                     IO_ES.escribirLN("La palabra $Hyperboss aparece en el texto: " + contador);
                     break;
                 case 2:
                     correcto = false;
 
                     String nuevaPalabra = "COÑAZO";
-                    String nuevoContenido = contenido.replace(palabra, azul + nuevaPalabra + reset);
+                    String nuevoContenido = contenido.replace(palabra, Color.azul() + nuevaPalabra + Color.reset());
                     IO_ES.escribirLN(nuevoContenido);
                     break;
                 case 3:
                     correcto = false;
-
+                    //Cada frase del texto es contenida en cada apartado de la matriz, es separado por cada punto "."
                     String[] texto = contenido.split("\\.");
-
                     boolean encontrado = false;
-                    for (int i = 0; i < texto.length && !encontrado; i++) { //Consegimos parar el bucle cuando le ponemos una condición
+                    for (int i = 1; i < texto.length && !encontrado; i++) { //Consegimos parar el bucle cuando le ponemos una condición
                         if (texto[i].contains(palabra)) {
                             encontrado = true;
-                            IO_ES.escribirLN("La primera frase en a parecer la palabra $Hyperboss es:\n" + texto[i]);
+                            IO_ES.escribirLN(Color.azul() + "-----------------------------------------------------------------------------" + Color.reset());
+                            IO_ES.escribirLN("La primera frase en a parecer la palabra $Hyperboss es:");
+                            IO_ES.escribirLN(texto[i]);
                         }
                     }
                     break;
