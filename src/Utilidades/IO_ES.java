@@ -84,6 +84,15 @@ public class IO_ES {
         return numero;
     }
 
+    public static void escribirFormato(String format, double i) {
+        try {
+            System.out.printf(format, i);
+            System.out.println("");
+        } catch (Exception e) {
+            System.err.println("El formato debe ser '%1.decimalesf'");
+        }
+    }
+
     public static void escribir(String mensaje) {
         System.out.print(mensaje);
     }

@@ -61,7 +61,7 @@ public class ValidarCadenas {
         IO_ES.escribir("Escribe la matricula del automóvil: ");
         matricula = entrada.nextLine();
         //Lo que no queremos que incluya va entre parentesis dentro de los corchetes a los que hace referencia
-        Pattern p = Pattern.compile("[0-9]{4}[b-zB-Z([^aieou])]{3}");
+        Pattern p = Pattern.compile("[0-9]{4}[b-zB-Z([^aieou][^ñ])]{3}");
         Matcher m = p.matcher(matricula);
         //Nos devuleve true o false
         return m.matches();
@@ -75,7 +75,7 @@ public class ValidarCadenas {
         IO_ES.escribir("Escribe la matricula del ciclomotor: ");
         matricula = entrada.nextLine();
 
-        Pattern p = Pattern.compile("[b-zB-Z([^aieou])]{1}[0-9]{4}[b-zB-Z([^aieou])]{3}");
+        Pattern p = Pattern.compile("[b-zB-Z([^aieouñ])]{1}[0-9]{4}[b-zB-Z([^aieouñ])]{3}");
         Matcher m = p.matcher(matricula);
         //Nos devuleve true o false
         return m.matches();
