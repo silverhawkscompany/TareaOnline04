@@ -27,7 +27,7 @@ public class CadenaCaracteres {
             IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
 
             opciones = IO_ES.leerInteger("Escribe una opción: ");
-
+            //IF-Else para que solo podamos escribir numeros entre 0 y 3, incluidos estos
             if (opciones > -1 && opciones < 4) {
                 correcto = true;
             } else {
@@ -38,17 +38,14 @@ public class CadenaCaracteres {
                 case 1:
                     correcto = false;
                     buscarPalabra();
-
                     break;
                 case 2:
                     correcto = false;
                     remplazarPalabra();
-
                     break;
                 case 3:
                     correcto = false;
                     buscarFrase();
-
                     break;
                 case 0:
                     break;
@@ -58,19 +55,19 @@ public class CadenaCaracteres {
 
     //Métodos
     public static void buscarPalabra() {
-        String contenido = "";
+        String texto = "";
         String palabra = "$Hyperboss";
         int contador = 0;
 
-        //Contenido del texto
+        //Variable que contiene el texto
         try {
-            contenido = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
+            texto = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
 
-        while (contenido.contains(palabra)) {
-            contenido = contenido.substring(contenido.indexOf(palabra) + palabra.length());
+        while (texto.contains(palabra)) {
+            texto = texto.substring(texto.indexOf(palabra) + palabra.length());
             contador++;
         }
         IO_ES.escribirLN(Color.azul() + "-----------------------------------------------------------------------------" + Color.reset());
@@ -78,41 +75,41 @@ public class CadenaCaracteres {
     }
 
     public static void remplazarPalabra() {
-        String contenido = "";
+        String texto = "";
         String palabra = "$Hyperboss";
 
-        //Contenido del texto
+        //Variable que contiene el texto
         try {
-            contenido = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
+            texto = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
 
         String nuevaPalabra = "COÑAZO";
-        String nuevoContenido = contenido.replace(palabra, Color.azul() + nuevaPalabra + Color.reset());
+        String nuevoContenido = texto.replace(palabra, Color.azul() + nuevaPalabra + Color.reset());
         IO_ES.escribirLN(nuevoContenido);
     }
 
     public static void buscarFrase() {
-        //Cada frase del texto es contenida en cada apartado de la matriz, es separado por cada punto "."
-        String contenido = "";
+        String texto = "";
         String palabra = "$Hyperboss";
 
-        //Contenido del texto
+        //Variable que contiene el texto
         try {
-            contenido = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
+            texto = new String(Files.readAllBytes(Paths.get("fichero/lectura.txt")));
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-
-        String[] texto = contenido.split("\\.");
+        //Cada frase del texto es contenida en cada apartado de la matriz, es separado por cada punto "."
+        String[] arrayTexto = texto.split("\\.");
         boolean encontrado = false;
-        for (int i = 1; i < texto.length && !encontrado; i++) { //Consegimos parar el bucle cuando le ponemos una condición
-            if (texto[i].contains(palabra)) {
+        //Consegimos parar el bucle cuando le ponemos una condición
+        for (int i = 1; i < arrayTexto.length && !encontrado; i++) {
+            if (arrayTexto[i].contains(palabra)) {
                 encontrado = true;
                 IO_ES.escribirLN(Color.azul() + "-----------------------------------------------------------------------------" + Color.reset());
                 IO_ES.escribirLN("La primera frase en a parecer la palabra $Hyperboss es:");
-                IO_ES.escribirLN(texto[i]);
+                IO_ES.escribirLN(arrayTexto[i]);
             }
         }
     }
