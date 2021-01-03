@@ -22,7 +22,7 @@ public class ValidarCadenas {
             IO_ES.escribirLN("1. Comprobar matrícula de un automóvil");
             IO_ES.escribirLN("2. Comprobar matrícula de un ciclomotor");
             IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
-
+            //If-Else lo utilizamos para solo poder intruducir valores enteros entre 0 y 2, ambos incluidos
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             if (opciones > -1 && opciones < 3) {
                 correcto = true;
@@ -61,7 +61,7 @@ public class ValidarCadenas {
         IO_ES.escribir("Escribe la matricula del automóvil: ");
         matricula = entrada.nextLine();
         //Lo que no queremos que incluya va entre parentesis dentro de los corchetes a los que hace referencia
-        Pattern p = Pattern.compile("[0-9]{4}[b-zB-Z([^aieou][^ñ])]{3}");
+        Pattern p = Pattern.compile("[0-9]{4}[b-d f-h j-n p-t v-z]{3}", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(matricula);
         //Nos devuleve true o false
         return m.matches();
@@ -75,7 +75,7 @@ public class ValidarCadenas {
         IO_ES.escribir("Escribe la matricula del ciclomotor: ");
         matricula = entrada.nextLine();
 
-        Pattern p = Pattern.compile("[b-zB-Z([^aieouñ])]{1}[0-9]{4}[b-zB-Z([^aieouñ])]{3}");
+        Pattern p = Pattern.compile("[b-d f-h j-n p-t v-z]{1}[0-9]{4}[b-d f-h j-n p-t v-z]{3}", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(matricula);
         //Nos devuleve true o false
         return m.matches();
