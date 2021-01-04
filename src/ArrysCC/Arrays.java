@@ -18,11 +18,11 @@ public class Arrays {
 
         do {
             IO_ES.escribirLN(Color.azul() + "-------------------------------MENU DE ARRAYS--------------------------------" + Color.reset());
-            IO_ES.escribirLN("1. Mostrar un Array de 10 con 10 primeros números pares");
-            IO_ES.escribirLN("2. Acierte un número de un Array de 10 con números aleatorios");
-            IO_ES.escribirLN("3. Elije el tamaño de un Array aleatorio, para ver la media, el mayor y el menor valor");
-            IO_ES.escribirLN("4. Elije el tamaño de un Array aleatorio para visualizarlo y ver los número mayores y menores de 50");
-            IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
+            IO_ES.escribirLN(Color.azul() + "1. Mostrar un Array de 10 con los 10 primeros números pares");
+            IO_ES.escribirLN(Color.azul() + "2. Acierte un número de un Array de 10 con números aleatorios");
+            IO_ES.escribirLN(Color.azul() + "3. Elije el tamaño de un Array aleatorio, para ver la media, el mayor y el menor valor");
+            IO_ES.escribirLN(Color.azul() + "4. Elije el tamaño de un Array aleatorio para visualizarlo y ver los número mayores y menores de 50");
+            IO_ES.escribirLN("0. Atrás" + Color.reset());//Solo se debe salir al pulsar 0
 
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             if (opciones < 5 && opciones > -1) {

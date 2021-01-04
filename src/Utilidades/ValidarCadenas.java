@@ -19,9 +19,9 @@ public class ValidarCadenas {
 
         do {
             IO_ES.escribirLN(Color.azul() + "-----------------------MENU COMPROBACIÓN DE MATRÍCULAS-----------------------" + Color.reset());
-            IO_ES.escribirLN("1. Comprobar matrícula de un automóvil");
-            IO_ES.escribirLN("2. Comprobar matrícula de un ciclomotor");
-            IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
+            IO_ES.escribirLN(Color.azul() + "1. Comprobar matrícula de un automóvil");
+            IO_ES.escribirLN(Color.azul() + "2. Comprobar matrícula de un ciclomotor");
+            IO_ES.escribirLN("0. Atrás" + Color.reset());//Solo se debe salir al pulsar 0
             //If-Else lo utilizamos para solo poder intruducir valores enteros entre 0 y 2, ambos incluidos
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             if (opciones > -1 && opciones < 3) {

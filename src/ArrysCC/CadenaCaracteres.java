@@ -21,10 +21,10 @@ public class CadenaCaracteres {
 
         do {
             IO_ES.escribirLN(Color.azul() + "--------------------------MENU CADENA DE CARACTERES--------------------------" + Color.reset());
-            IO_ES.escribirLN("1. Buscar la palabra '$Hyperboss'");//Indicar cuantas veces aparece en el texto
-            IO_ES.escribirLN("2. Sustituir la palabra '$Hyperboss' por 'COÑAZO'");//Además tiene que aparecer en azul
-            IO_ES.escribirLN("3. Primera frase en aparecer '$Hyperboss'");
-            IO_ES.escribirLN("0. Atrás");//Solo se debe salir al pulsar 0
+            IO_ES.escribirLN(Color.azul() + "1. Buscar la palabra '$Hyperboss'");//Indicar cuantas veces aparece en el texto
+            IO_ES.escribirLN(Color.azul() + "2. Sustituir la palabra '$Hyperboss' por 'COÑAZO'");//Además tiene que aparecer en azul
+            IO_ES.escribirLN(Color.azul() + "3. Primera frase en aparecer '$Hyperboss'");
+            IO_ES.escribirLN("0. Atrás" + Color.reset());//Solo se debe salir al pulsar 0
 
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             //IF-Else para que solo podamos escribir numeros entre 0 y 3, incluidos estos

@@ -19,11 +19,11 @@ public class Principal {
 
         do {
             IO_ES.escribirLN(Color.azul() + "--------------------------------MENU PRINCIPAL--------------------------------" + Color.reset());
-            IO_ES.escribirLN("1. Cadena de caracteres");
-            IO_ES.escribirLN("2. Validar matrículas");
-            IO_ES.escribirLN("3. Arrays");
-            IO_ES.escribirLN("4. Hundir la flota");
-            IO_ES.escribirLN("0. Salir");//Solo se debe salir al pulsar 0
+            IO_ES.escribirLN(Color.azul() + "1. Cadena de caracteres");
+            IO_ES.escribirLN(Color.azul() + "2. Validar matrículas");
+            IO_ES.escribirLN(Color.azul() + "3. Arrays");
+            IO_ES.escribirLN(Color.azul() + "4. Hundir la flota");
+            IO_ES.escribirLN("0. Salir" + Color.reset());//Solo se debe salir al pulsar 0
 
             opciones = IO_ES.leerInteger("Escribe una opción: ");
             if (opciones > -1 && opciones < 5) {
