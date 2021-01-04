@@ -54,6 +54,7 @@ public class CadenaCaracteres {
     }
 
     //Métodos
+    //1
     public static void buscarPalabra() {
         String texto = "";
         String palabra = "$Hyperboss";
@@ -74,6 +75,7 @@ public class CadenaCaracteres {
         IO_ES.escribirLN("La palabra $Hyperboss aparece en el texto: " + contador);
     }
 
+    //2
     public static void remplazarPalabra() {
         String texto = "";
         String palabra = "$Hyperboss";
@@ -90,6 +92,7 @@ public class CadenaCaracteres {
         IO_ES.escribirLN(nuevoContenido);
     }
 
+    //3
     public static void buscarFrase() {
         String texto = "";
         String palabra = "$Hyperboss";
@@ -104,7 +107,7 @@ public class CadenaCaracteres {
         String[] arrayTexto = texto.split("\\.");
         boolean encontrado = false;
         //Consegimos parar el bucle cuando le ponemos una condición
-        for (int i = 1; i < arrayTexto.length && !encontrado; i++) {
+        for (int i = 0; i < arrayTexto.length && !encontrado; i++) {
             if (arrayTexto[i].contains(palabra)) {
                 encontrado = true;
                 IO_ES.escribirLN(Color.azul() + "-----------------------------------------------------------------------------" + Color.reset());

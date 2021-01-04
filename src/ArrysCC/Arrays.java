@@ -58,16 +58,19 @@ public class Arrays {
         } while (correcto == false);
     }
 
+    //Métodos
+    //1
     public static void array10pares() {
         int pares[] = new int[10];//Declaración de la matriz
         for (int i = 0; i < 10; i++) {//Cuidado i siempre es menor al tamaño de la matriz
             pares[i] = 2 * i;
         }
         for (int i = 0; i < 10; i++) {
-            System.out.println("Valor del indice: " + i + " = " + pares[i]);
+            IO_ES.escribirLN("Valor del indice: " + i + " = " + pares[i]);
         }
     }
 
+    //2
     public static void array10aleatorio() {
         boolean encontrado = false;
         int numero;
@@ -79,50 +82,36 @@ public class Arrays {
         //Repetimos que recorra el arrays hasta que encontremos un numero acertado
         do {
             numero = IO_ES.leerInteger("Elije un número: ");
-
             for (int i = 0; i < 10; i++) {
                 if (aleatorio[i] == numero) {
                     IO_ES.escribirLN(Color.verde() + "Has acertado!!" + Color.reset());
                     //Aqui falla si le incorporo el numero que hemos puesto
-                    IO_ES.escribirLN("El número se encuentra en la posición: " + i);
-                    //Mostramos el array para que veas la posicion del número acertado
-                    for (int j = 0; j < 10; j++) {
-                        IO_ES.escribir(aleatorio[j] + " ");
-                    }
-                    IO_ES.escribirLN("");
+                    IO_ES.escribirLN("El número se encuentra en la posición: " + (i + 1));
                     encontrado = true;
                 }
             }
+            if (encontrado == false) {
+                IO_ES.escribirLN(Color.rojo() + "No has acertado!!" + Color.reset());
+            }
         } while (encontrado == false);//Cuidado he fallado puse "=" y no "=="
-        IO_ES.escribirLN("");
+        //Mostramos el array para que veas la posicion del número acertado
+        IO_ES.mostrarArrayEntero(aleatorio);
     }
 
+    //3
     public static void elijeArrayMedia() {
         int tamaño;
 
         tamaño = IO_ES.leerInteger("Elije el tamaño de un Array: ");
         double[] aleatorio = new double[tamaño];
-        //Lenamos el Array con números aleatorios
+        //Llenamos el Array con números aleatorios
         for (int i = 0; i < tamaño; i++) {
             aleatorio[i] = Math.random() * 100;
         }
         //Mostramos el array
-        for (double i : aleatorio) {
-            System.out.printf("%1.2f", i);
-            IO_ES.escribir("  ");
-        }
-        IO_ES.escribirLN("");
+        IO_ES.mostrarArrayDecimal(aleatorio);
         //Oredenamos el array de menor a mayor
-        for (int i = 0; i < tamaño - 1; i++) {
-            for (int j = 1; j < (tamaño - i); j++) {
-                // si el elemento anterior es mayor, hacemos el cambio
-                if (aleatorio[j - 1] > aleatorio[j]) {
-                    double aux_elem = aleatorio[j];
-                    aleatorio[j] = aleatorio[j - 1];
-                    aleatorio[j - 1] = aux_elem;
-                }
-            }
-        }
+        IO_ES.ordenarArray(aleatorio, tamaño);
         //Menor
         IO_ES.escribir("El número menor es: ");
         System.out.printf("%1.2f", aleatorio[0]);
@@ -143,9 +132,10 @@ public class Arrays {
         IO_ES.escribirLN("");
     }
 
+    //4
     public static void elijeArray50() {
         int tamaño;
-
+        int contador1 = 0, contador2 = 0;
         tamaño = IO_ES.leerInteger("Elije el tamaño de un Array: ");
         double[] aleatorio = new double[tamaño];
 
@@ -154,39 +144,22 @@ public class Arrays {
             aleatorio[i] = Math.random() * 100;
         }
         //Mostramos el array con un bucle for each
-        for (double i : aleatorio) {
-            System.out.printf("%1.2f", i);
-            IO_ES.escribir("  ");
-        }
-        IO_ES.escribirLN("");
+        IO_ES.mostrarArrayDecimal(aleatorio);
         //Oredenamos el array de menor a mayor
-        for (int i = 0; i < tamaño - 1; i++) {
-            for (int j = 1; j < (tamaño - i); j++) {
-                // si el elemento anterior es mayor, hacemos el cambio
-                if (aleatorio[j - 1] > aleatorio[j]) {
-                    double aux_elem = aleatorio[j];
-                    aleatorio[j] = aleatorio[j - 1];
-                    aleatorio[j - 1] = aux_elem;
-                }
-            }
-        }
-        IO_ES.escribirLN("Los números mayores a 50 son:");
-        IO_ES.escribirLN("-----------------------------");
-        //Recorremos el array con un bucle de nuevo y mostramos que valores de la matriz que son mayores a 50
+        IO_ES.ordenarArray(aleatorio, tamaño);
+        //Recorremos el array con un bucle de nuevo y mostramos cuantos números son mayores a 50
         for (int i = 0; i < tamaño; i++) {
             if (aleatorio[i] > 50) {
-                System.out.printf("%1.2f", aleatorio[i]);
-                IO_ES.escribirLN("");
+                contador1++;
             }
         }
-        IO_ES.escribirLN("Los números menores a 50 son:");
-        IO_ES.escribirLN("-----------------------------");
-        //Recorremos el array con un bucle de nuevo y mostramos que valores de la matriz que son menores a 50
+        IO_ES.escribirLN("Los números mayores a 50 son: " + contador1);
+        //Recorremos el array con un bucle de nuevo y mostramos cuantos números son menores a 50
         for (int i = 0; i < tamaño; i++) {
             if (aleatorio[i] < 50) {
-                System.out.printf("%1.2f", aleatorio[i]);
-                IO_ES.escribirLN("");
+                contador2++;
             }
         }
+        IO_ES.escribirLN("Los números menores a 50 son: " + contador2);
     }
 }

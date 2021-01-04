@@ -3,12 +3,9 @@
  */
 package Principal;
 
-import ArrysCC.Arrays;
-import ArrysCC.CadenaCaracteres;
-import HundirLaFlota.HundirFlota;
-import Utilidades.Color;
-import Utilidades.IO_ES;
-import Utilidades.ValidarCadenas;
+import ArrysCC.*;
+import HundirLaFlota.*;
+import Utilidades.*;
 
 /**
  *

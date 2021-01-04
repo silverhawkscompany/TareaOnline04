@@ -87,9 +87,9 @@ public class IO_ES {
     public static void escribirFormato(String format, double i) {
         try {
             System.out.printf(format, i);
-            System.out.println("");
+            System.out.print("");
         } catch (Exception e) {
-            System.err.println("El formato debe ser '%1.decimalesf'");
+            System.err.println("El formato debe ser '%1.decimales + f'");
         }
     }
 
@@ -99,5 +99,34 @@ public class IO_ES {
 
     public static void escribirLN(String mensaje) {
         System.out.println(mensaje);
+    }
+
+    public static void ordenarArray(double[] nombreArray, int tamaño) {
+        for (int i = 0; i < tamaño - 1; i++) {
+            for (int j = 1; j < (tamaño - i); j++) {
+                // si el elemento anterior es mayor, hacemos el cambio
+                if (nombreArray[j - 1] > nombreArray[j]) {
+                    double aux_elem = nombreArray[j];
+                    nombreArray[j] = nombreArray[j - 1];
+                    nombreArray[j - 1] = aux_elem;
+                }
+            }
+        }
+    }
+
+    public static void mostrarArrayDecimal(double[] nombreArray) {
+        for (double i : nombreArray) {
+            IO_ES.escribirFormato("%1.2f", i);
+            IO_ES.escribir(" - ");
+        }
+        IO_ES.escribirLN("");
+    }
+
+    public static void mostrarArrayEntero(int[] nombreArray) {
+        for (double i : nombreArray) {
+            IO_ES.escribirFormato("%1.2f", i);
+            IO_ES.escribir(" - ");
+        }
+        IO_ES.escribirLN("");
     }
 }
