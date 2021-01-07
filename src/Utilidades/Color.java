@@ -16,6 +16,7 @@ public class Color {
     }
 
     /**
+     * Método para cambiar las letras a color rojo
      *
      * @return Devuelve el color rojo
      */
