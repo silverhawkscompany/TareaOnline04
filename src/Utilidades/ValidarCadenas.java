@@ -55,7 +55,7 @@ public class ValidarCadenas {
     }
 
     /**
-     * Método para verificar los CP
+     * Método para verificar el Código Postal
      *
      * @return Devuelve si el CP introducido es true o false
      */

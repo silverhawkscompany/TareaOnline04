@@ -11,8 +11,8 @@ import Utilidades.*;
 public class Principal {
 
     /**
-     * @param args Menu principal
      *
+     * @param args Menu principal donde se inicia la ejecución del programa
      */
     public static void main(String[] args) {
         int opciones;
