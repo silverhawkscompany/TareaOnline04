@@ -100,8 +100,10 @@ public class Arrays {
             }
         } while (encontrado == false);//Cuidado he fallado puse "=" y no "=="
         //Mostramos el array para que veas la posicion del número acertado
-        IO_ES.escribirLN("Array aleatorio: ");
+        IO_ES.escribirLN("Te mostramos el Array: ");
+        IO_ES.escribir(Color.cyan());
         IO_ES.mostrarArrayEntero(aleatorio);
+        IO_ES.escribir(Color.reset());
     }
 
     /**
@@ -118,9 +120,12 @@ public class Arrays {
             aleatorio[i] = Math.random() * 100;
         }
         //Mostramos el array
+        IO_ES.escribirLN("Te mostramos el Array: ");
+        IO_ES.escribir(Color.cyan());
         IO_ES.mostrarArrayDecimal(aleatorio);
+        IO_ES.escribir(Color.reset());
         //Oredenamos el array de menor a mayor
-        IO_ES.ordenarArray(aleatorio, tamaño);
+        IO_ES.ordenarArrayDecimal(aleatorio, tamaño);
         //Menor
         IO_ES.escribir("El número menor es: ");
         IO_ES.escribirFormato("%1.2f", aleatorio[0]);
@@ -149,16 +154,19 @@ public class Arrays {
         int tamaño;
         int contador1 = 0, contador2 = 0;
         tamaño = IO_ES.leerInteger("Elije el tamaño de un Array: ");
-        double[] aleatorio = new double[tamaño];
+        int[] aleatorio = new int[tamaño];
 
         //Lo llenamos aleatoriamente con números hasta 100
         for (int i = 0; i < tamaño; i++) {
-            aleatorio[i] = Math.random() * 100;
+            aleatorio[i] = (int) (Math.random() * 100);
         }
-        //Mostramos el array con un bucle for each
-        IO_ES.mostrarArrayDecimal(aleatorio);
+        //Mostramos el array
+        IO_ES.escribirLN("Te mostramos el Array: ");
+        IO_ES.escribir(Color.cyan());
+        IO_ES.mostrarArrayEntero(aleatorio);
+        IO_ES.escribir(Color.reset());
         //Oredenamos el array de menor a mayor
-        IO_ES.ordenarArray(aleatorio, tamaño);
+        IO_ES.ordenarArrayEntero(aleatorio, tamaño);
         //Recorremos el array con un bucle de nuevo y mostramos cuantos números son mayores a 50
         for (int i = 0; i < tamaño; i++) {
             if (aleatorio[i] > 50) {

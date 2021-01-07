@@ -149,7 +149,7 @@ public class IO_ES {
      * @param nombreArray Indicamos el array que deseamos ordenar
      * @param tamaño Indicamos el tamaño de array
      */
-    public static void ordenarArray(double[] nombreArray, int tamaño) {
+    public static void ordenarArrayDecimal(double[] nombreArray, int tamaño) {
         for (int i = 0; i < tamaño - 1; i++) {
             for (int j = 1; j < (tamaño - i); j++) {
                 // si el elemento anterior es mayor, hacemos el cambio
@@ -176,14 +176,32 @@ public class IO_ES {
     }
 
     /**
+     * Método para ordenar arrays
+     *
+     * @param nombreArray Indicamos el array que deseamos ordenar
+     * @param tamaño Indicamos el tamaño de array
+     */
+    public static void ordenarArrayEntero(int[] nombreArray, int tamaño) {
+        for (int i = 0; i < tamaño - 1; i++) {
+            for (int j = 1; j < (tamaño - i); j++) {
+                // si el elemento anterior es mayor, hacemos el cambio
+                if (nombreArray[j - 1] > nombreArray[j]) {
+                    int aux_elem = nombreArray[j];
+                    nombreArray[j] = nombreArray[j - 1];
+                    nombreArray[j - 1] = aux_elem;
+                }
+            }
+        }
+    }
+
+    /**
      * Método para mostrar un array con números enteros
      *
      * @param nombreArray Indicamos el array que deseamos mostrar
      */
     public static void mostrarArrayEntero(int[] nombreArray) {
         for (int i : nombreArray) {
-            IO_ES.escribirFormato("%1.2f", i);
-            IO_ES.escribir(" - ");
+            IO_ES.escribir(i + " - ");
         }
         IO_ES.escribirLN("");
     }
