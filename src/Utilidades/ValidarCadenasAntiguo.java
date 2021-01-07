@@ -1,6 +1,3 @@
-/**
- *
- */
 package Utilidades;
 
 import java.util.*;
@@ -8,11 +5,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class ValidarCadenasAntiguo {
 
+    /**
+     * Método para el menu de validar cadenas
+     */
     public static void opcionesMenu() {
         int opciones;
         boolean correcto = false;
@@ -53,6 +53,12 @@ public class ValidarCadenasAntiguo {
         } while (correcto == false);
     }
 
+    /**
+     * Método para comprobar las matriculas de los ciclomotores
+     *
+     * @return Devuelve true o false, según la matricula introducida sea
+     * correcta
+     */
     private static boolean comprobarMatriculaAutomovil() {
         //4 números seguida de 3 letras. Ejemplo: 4231BBC
         Scanner entrada = new Scanner(System.in);
@@ -67,6 +73,12 @@ public class ValidarCadenasAntiguo {
         return m.matches();
     }
 
+    /**
+     * Método para comprobar las matriculas de los ciclomotores
+     *
+     * @return Devuelve true o false, según la matricula introducida sea
+     * correcta
+     */
     private static boolean comprobarMatriculaCiclomotor() {
         //1 letra seguida de 4 números y, posteriormente, 3 letras más. Ejemplo: C8731BTJ
         Scanner entrada = new Scanner(System.in);

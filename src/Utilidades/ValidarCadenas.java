@@ -1,6 +1,3 @@
-/**
- *
- */
 package Utilidades;
 
 import java.math.BigInteger;
@@ -9,11 +6,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class ValidarCadenas {
 
+    /**
+     * Menu para validar cadenas
+     */
     public static void opcionesMenu() {
         int opciones;
         boolean correcto = false;
@@ -33,7 +33,7 @@ public class ValidarCadenas {
             switch (opciones) {
                 case 1:
                     correcto = false;
-                    if (verificarCP() == true) {
+                    if (verificarCP()) {
                         IO_ES.escribirLN(Color.verde() + "Código postal correcto" + Color.reset());
                     } else {
                         IO_ES.escribirLN(Color.rojo() + "El código postal no es válido" + Color.reset());
@@ -54,16 +54,27 @@ public class ValidarCadenas {
 
     }
 
+    /**
+     * Método para verificar los CP
+     *
+     * @return Devuelve si el CP introducido es true o false
+     */
     public static boolean verificarCP() {
         //el parámetro contiene 5 números comprendidos entre 01001 y 52999, falso en caso contrario
         int postal;
         boolean condicion;
+
         postal = IO_ES.leerInteger("Introduce el Código postal: ");
-        condicion = postal > 01001 && postal < 52999;
+        condicion = postal > 1000 && postal < 53000;
 
         return condicion;
     }
 
+    /**
+     * Método para verificar las cuentas bancarias
+     *
+     * @return Devuelve true o false según si la cuenta introducida es correcta
+     */
     public static boolean verificarCuenta() {
         //Cuenta válida ES1901230001180123495789
         Scanner entrada = new Scanner(System.in);
@@ -176,7 +187,6 @@ public class ValidarCadenas {
                 //Comparamos el codigo
                 String codigoComparar = cuenta.substring(2, 4);
                 ccc = codigoComparar.equals(codigoControlIban);
-
             }
         }
         return ccc;

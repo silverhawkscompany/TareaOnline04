@@ -1,6 +1,3 @@
-/**
- *
- */
 package Principal;
 
 import ArrysCC.*;
@@ -8,11 +5,15 @@ import HundirLaFlota.*;
 import Utilidades.*;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class Principal {
 
+    /**
+     * @param args Menu principal
+     *
+     */
     public static void main(String[] args) {
         int opciones;
         boolean correcto = false;

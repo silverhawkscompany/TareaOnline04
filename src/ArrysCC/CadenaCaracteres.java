@@ -1,6 +1,3 @@
-/**
- *
- */
 package ArrysCC;
 
 import Utilidades.Color;
@@ -10,11 +7,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class CadenaCaracteres {
 
+    /**
+     * Menu para las cadenas de caracteres
+     */
     public static void opcionesMenu() {
         int opciones;
         boolean correcto = false;
@@ -53,6 +53,9 @@ public class CadenaCaracteres {
         } while (correcto == false);
     }
 
+    /**
+     * Metodo para buscar la palabra "$Hyperboss"
+     */
     //Métodos
     //1
     public static void buscarPalabra() {
@@ -75,6 +78,9 @@ public class CadenaCaracteres {
         IO_ES.escribirLN("La palabra $Hyperboss aparece en el texto: " + contador);
     }
 
+    /**
+     * Método para remplazar la palabra "$Hyperboss" por "Coñazo"
+     */
     //2
     public static void remplazarPalabra() {
         String texto = "";
@@ -92,6 +98,9 @@ public class CadenaCaracteres {
         IO_ES.escribirLN(nuevoContenido);
     }
 
+    /**
+     * Método para buscar la primera frase donde aparace la palabra "$Hyperboss"
+     */
     //3
     public static void buscarFrase() {
         String texto = "";

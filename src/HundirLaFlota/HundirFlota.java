@@ -1,13 +1,10 @@
-/**
- *
- */
 package HundirLaFlota;
 
 import Utilidades.IO_ES;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class HundirFlota {
 

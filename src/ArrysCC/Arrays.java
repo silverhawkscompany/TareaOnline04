@@ -1,17 +1,17 @@
-/**
- *
- */
 package ArrysCC;
 
 import Utilidades.Color;
 import Utilidades.IO_ES;
 
 /**
- *
  * @author Daniel Díaz González
+ * @version 1.0
  */
 public class Arrays {
 
+    /**
+     * Menu para los Arrays
+     */
     public static void opcionesMenu() {
         int opciones;
         boolean correcto = false;
@@ -58,8 +58,10 @@ public class Arrays {
         } while (correcto == false);
     }
 
-    //Métodos
-    //1
+    /**
+     * Método para mostrar un Array de tamaño 10 con los 10 primeros números
+     * pares
+     */
     public static void array10pares() {
         int pares[] = new int[10];//Declaración de la matriz
         for (int i = 0; i < 10; i++) {//Cuidado i siempre es menor al tamaño de la matriz
@@ -70,7 +72,10 @@ public class Arrays {
         }
     }
 
-    //2
+    /**
+     * Método para poder acertar un número dentro de un Array de tamaño 10 con
+     * números aleatorios
+     */
     public static void array10aleatorio() {
         boolean encontrado = false;
         int numero;
@@ -99,7 +104,10 @@ public class Arrays {
         IO_ES.mostrarArrayEntero(aleatorio);
     }
 
-    //3
+    /**
+     * Método para elegir el tamaño de un Array aleatorio, y mostrarnos la
+     * media, el mayor y el menor valor
+     */
     public static void elijeArrayMedia() {
         int tamaño;
 
@@ -115,11 +123,11 @@ public class Arrays {
         IO_ES.ordenarArray(aleatorio, tamaño);
         //Menor
         IO_ES.escribir("El número menor es: ");
-        System.out.printf("%1.2f", aleatorio[0]);
+        IO_ES.escribirFormato("%1.2f", aleatorio[0]);
         IO_ES.escribirLN("");
         //Mayor
         IO_ES.escribir("El número mayor es: ");
-        System.out.printf("%1.2f", aleatorio[tamaño - 1]);
+        IO_ES.escribirFormato("%1.2f", aleatorio[tamaño - 1]);
         IO_ES.escribirLN("");
         //Media
         double suma = 0;
@@ -129,11 +137,14 @@ public class Arrays {
             media = suma / 2;
         }
         IO_ES.escribir("La media de la matriz es: ");
-        System.out.printf("%1.2f", media);
+        IO_ES.escribirFormato("%1.2f", media);
         IO_ES.escribirLN("");
     }
 
-    //4
+    /**
+     * Método que nos permite elejir el tamaño de un Array aleatorio para
+     * visualizarlo y ver cuantos números son mayores y menores de 50
+     */
     public static void elijeArray50() {
         int tamaño;
         int contador1 = 0, contador2 = 0;
