@@ -20,7 +20,7 @@ public class Principal {
         do {
             IO_ES.escribirLN(Color.azul() + "--------------------------------MENU PRINCIPAL--------------------------------" + Color.reset());
             IO_ES.escribirLN(Color.azul() + "1. Cadena de caracteres");
-            IO_ES.escribirLN(Color.azul() + "2. Validar matrículas");
+            IO_ES.escribirLN(Color.azul() + "2. Validar cadenas");
             IO_ES.escribirLN(Color.azul() + "3. Arrays");
             IO_ES.escribirLN(Color.azul() + "4. Hundir la flota");
             IO_ES.escribirLN("0. Salir" + Color.reset());//Solo se debe salir al pulsar 0

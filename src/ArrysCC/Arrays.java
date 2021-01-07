@@ -75,7 +75,7 @@ public class Arrays {
         boolean encontrado = false;
         int numero;
         int aleatorio[] = new int[10];
-        //Creamos una matriz aleatoriade hasta el numero 20
+        //Creamos una matriz aleatoriade hasta el número 20
         for (int i = 0; i < 10; i++) {
             aleatorio[i] = (int) Math.round(Math.random() * 20);
         }
@@ -95,6 +95,7 @@ public class Arrays {
             }
         } while (encontrado == false);//Cuidado he fallado puse "=" y no "=="
         //Mostramos el array para que veas la posicion del número acertado
+        IO_ES.escribirLN("Array aleatorio: ");
         IO_ES.mostrarArrayEntero(aleatorio);
     }
 
@@ -139,7 +140,7 @@ public class Arrays {
         tamaño = IO_ES.leerInteger("Elije el tamaño de un Array: ");
         double[] aleatorio = new double[tamaño];
 
-        //Lo llenamos aleatoriamente
+        //Lo llenamos aleatoriamente con números hasta 100
         for (int i = 0; i < tamaño; i++) {
             aleatorio[i] = Math.random() * 100;
         }
